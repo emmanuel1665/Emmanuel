@@ -1,0 +1,41 @@
+<form
+  action="{{url_for('registrosUnidad') }}"
+  method="GET"
+  enctype="multipart/form-data"
+>
+  <h5>Unidades Registradas</h5>
+  <table class="table table-responsive-sm table-spriped">
+    <thead class="thead-inverse">
+      <tr class="text-center">
+        <td>ID</td>
+        <td>NOMBRE</td>
+        <td>DIRECCION</td>
+        <td>CCT</td>
+        <td>EMAIL</td>
+        <td>CARRERAS</td>
+      </tr>
+    </thead>
+    <tbody>
+      {%for unidades in unidades%}
+      <tr>
+        <td>{{unidades.id}}</td>
+        <td>{{unidades.nombre}}</td>
+        <td>{{unidades.direccion}}</td>
+        <td>{{unidades.cct}}</td>
+        <td>{{unidades.email}}</td>
+        <td>{{unidades.carreras}}</td>
+        <td>
+          <a
+            type="button"
+            data-bs-toggle="modal"
+            href="{{ url_for('modificarfun', id=unidades.id)}}"
+            data-bs-target="#unidades-{{unidades.id}}-modal"
+            >Actualizar</a
+          >
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</form>
+

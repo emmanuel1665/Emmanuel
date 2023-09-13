@@ -1,0 +1,32 @@
+<form
+  action="{{url_for('registrosUnidad') }}"
+  method="GET"
+  enctype="multipart/form-data"
+>
+  <h5>Unidades Registradas</h5>
+  <table class="table table-responsive-sm table-spriped">
+    <thead class="thead-inverse">
+      <tr class="text-center">
+        <td>ID</td>
+        <td>NOMBRE</td>
+        <td>DIRECCION</td>
+        <td>CCT</td>
+        <td>EMAIL</td>
+        <td>CARRERAS</td>
+      </tr>
+    </thead>
+    <tbody>
+      {%for unidades in unidades%}
+      <tr>
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Un texto de ejemplo rápido para colocal cerca del título de la tarjeta y componer la mayor parte del contenido de la tarjeta.</p>
+          </div>
+        </div>
+        </td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</form>
